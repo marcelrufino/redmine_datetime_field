@@ -9,7 +9,8 @@ module RedmineDatetimeField
       end
 
       def validate_single_value(custom_field, value, customized = nil)
-        if /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.match?(value) && (value.to_date rescue false)
+        valid_datetime = DateTime.parse value rescue false
+        if valid_datetime
           []
         else
           [::I18n.t("not_a_datetime")]
