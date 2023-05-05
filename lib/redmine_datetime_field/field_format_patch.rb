@@ -37,7 +37,7 @@ module RedmineDatetimeField
       def formatted_value(view, custom_field, value, customized = nil, html = false)
         res = ""
 
-        unless value.empty?
+        unless !value || value.empty?
           res = DateTime.parse(value).strftime("%F %R")
         end
 
