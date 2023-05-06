@@ -27,7 +27,7 @@ module RedmineDatetimeField
       end
 
       def query_filter_options(custom_field, query)
-        { :type => :datetime }
+        { :type => :date }
       end
 
       def group_statement(custom_field)
