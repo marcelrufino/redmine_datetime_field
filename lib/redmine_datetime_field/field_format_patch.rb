@@ -28,7 +28,10 @@ module RedmineDatetimeField
 
       def query_filter_options(custom_field, query)
         logger.info "**** PASSOU AQUI ****"
-        query.operators_by_filter_type << :datetime => [ "=", ">=", "<=", "><", "<t+", ">t+", "><t+", "t+", "nd", "t", "ld", "nw", "w", "lw", "l2w", "nm", "m", "lm", "y", ">t-", "<t-", "><t-", "t-", "!*", "*" ]
+        operators = [ "=", ">=", "<=", "><", "<t+", ">t+", "><t+", "t+", "nd", "t", "ld", "nw", "w", "lw", "l2w", "nm", "m", "lm", "y", ">t-", "<t-", "><t-", "t-", "!*", "*" ]
+        operators.each do |operator| 
+          query.add_filter(custom_field, operator, nil)
+        end
         logger.info "**** QUERY: #{query.operators_by_filter_type}"
         { :type => :datetime }
       end
