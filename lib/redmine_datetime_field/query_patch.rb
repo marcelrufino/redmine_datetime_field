@@ -1,8 +1,6 @@
 module RedmineDatetimeField
     module QueryPatch
-        def self.included(base)
-            base.send(:include)
-            
+        def self.included(base)            
             base.class_eval do
                 unloadable
                 #logger.info "**** PASSOU AQUI ****"
