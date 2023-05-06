@@ -38,7 +38,7 @@ module RedmineDatetimeField
         res = ""
 
         unless !value || value.empty?
-          res = DateTime.parse(value).strftime("%d-%m-%YT%H:%M")
+          res = DateTime.parse(value).strftime("%Y-%m-%dT%H:%M")
         end
 
         if html
