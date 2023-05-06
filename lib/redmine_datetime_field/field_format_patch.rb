@@ -41,17 +41,7 @@ module RedmineDatetimeField
           res = DateTime.parse(value).strftime("%Y-%m-%dT%H:%M")
         end
 
-        if html
-          if custom_field.url_pattern.present?
-            res
-          elsif custom_field.text_formatting == "full"
-            view.textilizable(res, :object => customized)
-          else
-            res
-          end
-        else
-          res
-        end
+        res
       end
     end
   end
