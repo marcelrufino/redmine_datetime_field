@@ -45,12 +45,12 @@ module RedmineDatetimeField
           if custom_field.url_pattern.present?
             super
           elsif custom_field.text_formatting == "full"
-            view.textilizable(value, :object => customized)
+            view.textilizable("#{value}C", :object => customized)
           else
-            res
+            "#{res}A"
           end
         else
-          res
+          "#{res}B"
         end
       end
     end
