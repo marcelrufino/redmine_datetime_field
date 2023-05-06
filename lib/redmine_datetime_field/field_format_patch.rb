@@ -47,10 +47,10 @@ module RedmineDatetimeField
           elsif custom_field.text_formatting == "full"
             view.textilizable("#{value}C", :object => customized)
           else
-            "#{res}A"
+            res
           end
         else
-          "#{res}B"
+          res
         end
       end
     end
