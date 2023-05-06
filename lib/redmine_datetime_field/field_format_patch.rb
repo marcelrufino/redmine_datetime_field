@@ -1,6 +1,6 @@
 module RedmineDatetimeField
   module FieldFormatPatch
-    class DateTimeFormat < Redmine::FieldFormat::Unbounded
+    class DateTimeFormat < Redmine::FieldFormat::DateFormat
       add "datetime"
       self.form_partial = "custom_fields/formats/datetime"
 
