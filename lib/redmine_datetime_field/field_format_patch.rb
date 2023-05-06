@@ -43,7 +43,7 @@ module RedmineDatetimeField
 
         if html
           if custom_field.url_pattern.present?
-            super
+            res
           elsif custom_field.text_formatting == "full"
             view.textilizable(res, :object => customized)
           else
