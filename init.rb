@@ -2,6 +2,7 @@ curr_dirname = File.dirname(__FILE__)
 
 %w(field_format_patch).each do |require_file|
   require File.join(curr_dirname, "lib", "redmine_datetime_field", require_file)
+  require File.join(curr_dirname, "lib", "query_patch", require_file)
 end
 
 Redmine::Plugin.register :redmine_datetime_field do
