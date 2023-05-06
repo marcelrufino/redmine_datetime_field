@@ -1,6 +1,6 @@
 module RedmineDatetimeField
   module FieldFormatPatch
-    class DateTimeFormat < Redmine::FieldFormat::DateFormat
+    class DateTimeFormat < Redmine::FieldFormat::Unbounded
       add "datetime"
       self.form_partial = "custom_fields/formats/datetime"
 
@@ -27,7 +27,10 @@ module RedmineDatetimeField
       end
 
       def query_filter_options(custom_field, query)
-        { :type => :datetime }
+        {
+          :type => :list_optional,
+          :values => lambda {query_filter_values(custom_field, query)}
+        }
       end
 
       def group_statement(custom_field)
