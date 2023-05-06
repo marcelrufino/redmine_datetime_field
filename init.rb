@@ -12,3 +12,5 @@ Redmine::Plugin.register :redmine_datetime_field do
 
   Redmine::FieldFormat.__send__(:include, RedmineDatetimeField::FieldFormatPatch)
 end
+
+Query.operators_by_filter_type << :datetime => [ "=", ">=", "<=", "><", "<t+", ">t+", "><t+", "t+", "nd", "t", "ld", "nw", "w", "lw", "l2w", "nm", "m", "lm", "y", ">t-", "<t-", "><t-", "t-", "!*", "*" ]
