@@ -27,7 +27,11 @@ module RedmineDatetimeField
       end
 
       def query_filter_options(custom_field, query)
-        { :type => :datetime }
+        ret = { :type => :datetime => [ "=", ">=", "<=", "><", "<t+", ">t+", "><t+", "t+", "nd", "t", "ld", "nw", "w", "lw", "l2w", "nm", "m", "lm", "y", ">t-", "<t-", "><t-", "t-", "!*", "*" ]  }
+
+        logger.info "**** PASSOU AQUI ****"
+
+        ret
       end
 
       def group_statement(custom_field)
