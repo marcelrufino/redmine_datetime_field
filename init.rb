@@ -11,6 +11,4 @@ Redmine::Plugin.register :redmine_datetime_field do
   version "0.0.1"
 
   Redmine::FieldFormat.__send__(:include, RedmineDatetimeField::FieldFormatPatch)
-  Redmine::Query.__send__(:include, RedmineDatetimeField::QueryPatch)
-
 end
