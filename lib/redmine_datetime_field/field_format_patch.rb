@@ -18,7 +18,7 @@ module RedmineDatetimeField
       end
 
       def edit_tag(view, tag_id, tag_name, custom_value, options = {})
-        view.datetime_field_tag(tag_name, DateTime.parse(custom_value.value).strftime("%Y-%m-%DT%H:%M"), options.merge(:id => tag_id, :size => 10))
+        view.datetime_field_tag(tag_name, DateTime.parse(custom_value.value).strftime("%Y-%m-%dT%H:%M"), options.merge(:id => tag_id, :size => 10))
       end
 
       def bulk_edit_tag(view, tag_id, tag_name, custom_field, objects, value, options = {})
